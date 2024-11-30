@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Track Service Requests</title>
+</head>
+<body class="bg-light">
+    <div class="container">
+        <h1 class="mt-5">Track Service Requests</h1>
+        <ul class="list-group mt-3">
+            {% for request in requests %}
+                <li class="list-group-item">
+                    {{ request.service_type }} - {{ request.status }} (Submitted on {{ request.created_at|date:"F j, Y, g:i a" }})
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
